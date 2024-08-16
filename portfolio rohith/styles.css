@@ -1,0 +1,505 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #007ced;
+  --secondary-color: #d5d5d5;
+  --background-color: #222;
+  --text-color: #e5e5e5;
+  --accent-color: #333;
+  --max-width: 1280px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.hero-header {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: var(--background-color);
+}
+
+.wrapper {
+  width: var(--max-width);
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  padding: 40px 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo i {
+  height: 45px;
+  width: 45px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.logo .logo-text {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+}
+
+nav .togglebtn {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 45px;
+  right: 3%;
+  z-index: 5;
+  cursor: pointer;
+  display: none;
+}
+
+nav .togglebtn span {
+  display: block;
+  background-color: var(--primary-color);
+  margin: 5px 0;
+  width: 100%;
+  height: 3px;
+  transition: 0.3s;
+  transition-property: transform, opacity;
+}
+
+nav .navlinks {
+  list-style-type: none;
+}
+
+nav .navlinks li {
+  display: inline-block;
+}
+
+nav .navlinks li a {
+  color: var(--text-color);
+  margin-right: 2.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 4rem;
+}
+
+.container .hero-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 15px solid #444;
+  box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5);
+}
+
+.hero-pic img {
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
+}
+
+.hero-pic img:hover {
+  transform: scale(1.2);
+}
+
+.hero-text {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-text h5 {
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.hero-text h5 span {
+  color: var(--primary-color);
+  font-size: 16px;
+}
+
+.hero-text h1 {
+  color: var(--primary-color);
+  font-size: 3rem;
+}
+
+.hero-text p {
+  color: var(--text-color);
+}
+
+.btn-group {
+  margin: 45px 0;
+}
+
+.btn-group .btn {
+  color: #fff;
+  background-color: var(--accent-color);
+  padding: 12px 25px;
+  margin: 5px 0;
+  margin-right: 7px;
+  border-radius: 30px;
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 10px 10px -8px rgb(0 0 0 / 78%);
+  transition: 0.3s;
+}
+
+.btn-group .btn:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn.active {
+  border-color: var(--primary-color);
+}
+
+.hero-text .social i {
+  color: var(--text-color);
+  font-size: 18px;
+  margin-right: 10px;
+  transition: 0.5s;
+}
+
+.hero-text .social i:hover {
+  color: var(--primary-color);
+  transform: rotate(360deg);
+}
+
+/* Responsive design & displaying navbar for small screens */
+@media (max-width: 930px) {
+  nav .togglebtn {
+    display: initial;
+  }
+
+  .click {
+    top: 45px;
+  }
+
+  .click span {
+    position: absolute;
+    margin-top: 12px;
+  }
+
+  .click span:first-child {
+    transform: rotate(-40deg);
+  }
+
+  .click span:nth-child(2) {
+    opacity: 0;
+    margin: 0;
+  }
+
+  .click span:last-child {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  nav .navlinks {
+    position: absolute;
+    top: 110px;
+    right: -100%;
+    bottom: 0;
+    width: 60%;
+    height: 100vh;
+    background-color: var(--background-color);
+    z-index: 3;
+    box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+    padding: 25px 0;
+  }
+
+  nav .navlinks li {
+    display: block;
+  }
+
+  nav .navlinks li a {
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  nav .navlinks.open {
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+
+  .hero-text {
+    padding: 40px 0;
+  }
+}
+
+/* About Section */
+#about {
+  padding: 4rem 0;
+}
+
+#about .section__container {
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+#about p {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Resume Section */
+#resume {
+  padding: 4rem 0;
+  background-color: #333;
+}
+
+#resume .section__container {
+  text-align: center;
+}
+
+#resume h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+#resume p {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+#resume .download-resume {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: 2px solid var(--primary-color);
+  color: #fff;
+  background-color: var(--accent-color);
+  transition: 0.3s;
+}
+
+#resume .download-resume:hover {
+  background-color: var(--primary-color);
+}
+
+/* Portfolio Section */
+/* Portfolio Section */
+/* Portfolio Section */
+#portfolio {
+  padding: 4rem 0;
+  background-color: var(--accent-color);
+}
+
+#portfolio .section__container {
+  text-align: center;
+}
+
+#portfolio h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  padding: 0 20px;
+}
+
+.portfolio__item {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.portfolio__item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio__item p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.portfolio__item .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.portfolio__item .btn:hover {
+  background-color: var(--primary-color-dark);
+  transform: scale(1.05);
+}
+
+.portfolio__item:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design for portfolio items */
+@media (max-width: 768px) {
+  .portfolio__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Contact Section */
+#contact {
+  padding: 4rem 0;
+  background-color: #333;
+}
+
+#contact .section__container {
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+#contact p {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
+#contact .social-links {
+  margin-bottom: 1.5rem;
+}
+
+#contact .social-links a {
+  color: var(--text-color);
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+#contact .social-links a:hover {
+  color: var(--primary-color);
+}
+
+.contact__form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact__form input,
+.contact__form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #222;
+  color: #fff;
+}
+
+.contact__form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact__form button:hover {
+  background-color: var(--accent-color);
+}
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text h5, .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .container .hero-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .btn-group .btn {
+    padding: 10px 20px;
+    margin: 5px 0;
+  }
+
+  #about p, #resume p, #contact p {
+    font-size: 0.9rem;
+  }
+
+  #portfolio .portfolio__item {
+    padding: 1rem;
+  }
+
+  .contact__form input, .contact__form textarea {
+    padding: 10px;
+  }
+
+  .contact__form button {
+    padding: 10px;
+  }
+}
